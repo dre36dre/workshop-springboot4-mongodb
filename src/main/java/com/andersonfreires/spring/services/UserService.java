@@ -12,7 +12,7 @@ import com.andersonfreires.spring.repositories.UserRepository;
 public class UserService {
 	
 	@Autowired
-	UserRepository repository;
+	private  UserRepository repository;
 	
 	
 	public List<User> findAll(){
