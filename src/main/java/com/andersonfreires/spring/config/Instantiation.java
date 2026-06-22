@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.andersonfreires.spring.domain.Post;
 import com.andersonfreires.spring.domain.User;
+import com.andersonfreires.spring.dto.AuthorDTO;
 import com.andersonfreires.spring.repositories.PostRepository;
 import com.andersonfreires.spring.repositories.UserRepository;
 
@@ -41,13 +42,13 @@ public class Instantiation implements CommandLineRunner {
 		User dre = new User(null, "Dre Yellow", "dre@gmail.com");
 		
 		
-		
-		Post post1=new Post(null, sdf.parse("22/06/2026"),"Partiu viagem","Vou viajar para Nova Iorque",maria);
-		Post post2=new Post(null, sdf.parse("22/06/2026"),"Bom dia","Acordei feliz hoje!",maria);
-		Post post3=new Post(null, sdf.parse("22/06/2026"), "Boa tarde", "Hoje estou tão feliz",dre) ;
-		
-		
 		userReposiroty.saveAll(Arrays.asList(maria, alex, bob,dre));
+		
+		Post post1=new Post(null, sdf.parse("22/06/2026"),"Partiu viagem","Vou viajar para Nova Iorque", new AuthorDTO( maria));
+		Post post2=new Post(null, sdf.parse("22/06/2026"),"Bom dia","Acordei feliz hoje!",new AuthorDTO( maria));
+		Post post3=new Post(null, sdf.parse("22/06/2026"), "Boa tarde", "Hoje estou tão feliz",new AuthorDTO(dre) );
+		
+		
 		postRepository.saveAll(Arrays.asList(post1,post2,post3));
 		}
 
