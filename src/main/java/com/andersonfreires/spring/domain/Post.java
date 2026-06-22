@@ -9,7 +9,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.andersonfreires.spring.dto.AuthorDTO;
-import com.andersonfreires.spring.dto.UserDTO;
 
 
 @Document
